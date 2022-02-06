@@ -1,5 +1,13 @@
 <Ul>
   <li *ngFor="let post of posts$ | async">
-    {{post.title}}
+    <div>
+      <span>{{post.id}}</span>
+      &nbsp;
+      <span>{{post.title}}</span>
+      &nbsp;
+      <input #title type="text" placeholder="title" [value]="post.title" (keyup.enter)="update(post,title.value)">
+      &nbsp;
+      <button (click)="delete(post.id)">delete</button>
+    </div>
   </li>
 </Ul>

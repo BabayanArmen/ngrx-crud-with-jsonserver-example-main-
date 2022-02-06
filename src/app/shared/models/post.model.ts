@@ -1,5 +1,4 @@
 export interface Post {
-  id: any;
+  id?: any;
   title: string;
-  author?: string
 }
